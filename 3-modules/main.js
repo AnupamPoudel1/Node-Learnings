@@ -2,25 +2,25 @@
 // Common JS, every file is a module (by defaut)
 // Modules - Encapsulated Code (Only share minimum)
 
-const names = require('./3-modules/names');
+const names = require('./names');
 // it can be destructured as
-// const { firstName, secondName } = require('./3-modules/names');
+// const { firstName, secondName } = require('./names');
 
-const printName = require('./3-modules/function');
+const printName = require('./function');
 
 // or the names module can also be destructured as fllow
 printName(names.firstName);
 printName(names.secondName);
 
 // for alternate
-const {items, singlePerson} = require('./3-modules/alternate');
+const {items, singlePerson} = require('./alternate');
 
 console.log(items);
 console.log(singlePerson);
 
 // The above given or below given both are possible
 
-// const data = require('./3-modules/alternate');
+// const data = require('./alternate');
 
 // console.log(data);
 // console.log(data.singlePerson);
