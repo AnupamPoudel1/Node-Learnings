@@ -25,3 +25,11 @@ console.log(singlePerson);
 // console.log(data);
 // console.log(data.singlePerson);
 // console.log(data.items);
+
+
+
+// alternate 2
+require('./3-modules/alternate2');
+
+// Even tho we didnt export anything in alternate2 file we still got the result of the sum function running there.
+// if there is a function running in the file we required then it will show the result.
