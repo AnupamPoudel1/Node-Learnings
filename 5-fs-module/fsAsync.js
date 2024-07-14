@@ -37,3 +37,11 @@ readFile('./contents/subfolder/information.txt', 'utf-8', (err, result) => {
             });
     });
 });
+
+// callback hell can be avoided using async await type of fs
+// Examples
+
+const fsPromises = require('fs').promises;
+const path = require('path');
+
+
