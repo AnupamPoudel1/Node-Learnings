@@ -44,4 +44,18 @@ readFile('./contents/subfolder/information.txt', 'utf-8', (err, result) => {
 const fsPromises = require('fs').promises;
 const path = require('path');
 
+const fileOp = async () => {
+    try {
+        let first = await fsPromises.readFile('./contents/subfolder/information.txt', 'utf-8');
+        let second = await fsPromises.readFile('./contents/subfolder/education.txt', 'utf-8');
+        await fsPromises.writeFile(
+            './contents/subfolder/aboutAsync.txt',
+            `The combined detail from information and education: ${first} ${second}`
+        );
+        console.log(first, second);
+    } catch (err) {
+        console.log("Error:" + err);
+    }
+}
 
+fileOp();
