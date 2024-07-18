@@ -7,6 +7,7 @@
 
 // global dependency : using installed dependency in any project
 // npm install -g <packageName> or npm i -g <packageName>
+// sudo npm install -g <packageName>
 // eg: npm install -g nodemon or npm i -g nodemon
 
 // package.json : manifest file (stores important info about project/package)
