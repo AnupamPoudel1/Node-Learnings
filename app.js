@@ -1,25 +1,17 @@
-const http = require('http');
+const { readFile } = require('fs');
 
-const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        res.end('Home Page');
-    }
-    if (req.url === '/about') {
-        // blocking code: This code will not only stop contact page but also home page and other pages.
-        for (let i = 0; i < 1000; i++) {
-            for (let j = 0; j < 1000; j++) {
-                console.log(`i: ${i} + j: ${j}`);
+const getText = (path) => {
+    return new Promise((reject, resolve) => {
+        readFile(path, 'utf-8', (err, data) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(data);
             }
-        }
-        res.end('About Page');
-    }
-    if (req.url === '/contact') {
-        res.end('Contact Page');
-    }
-    res.end('Error Page');
+        });
+    });
+}
 
-});
-
-server.listen(3500, () => {
-    console.log('Server running in port 3500');
-});
+getText('./7-eventLoop/content/first.txt')
+    .then((result) => console.log(result))
+    .catch((err) => console.log(err));
