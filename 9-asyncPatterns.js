@@ -1,3 +1,7 @@
+// The below given code is an example of how we can use promises.
+// There is better ways to use promises that we will explore later.
+// As the task inreases this as well gets complicated over time.
+
 const { readFile } = require('fs');
 
 const getText = (path) => {
@@ -12,10 +16,12 @@ const getText = (path) => {
     });
 }
 
-// getText('./7-eventLoop/content/first.txt')
-//     .then((result) => console.log(result))
-//     .catch((err) => console.log(err));
+getText('./7-eventLoop/content/first.txt')
+    .then((result) => console.log(result))
+    .catch((err) => console.log(err));
 
+// using async await
+// There is better way to do this that we will explore later
 
 // I dont know why but here the first is getting print but the second is not getting printed.
 // There are no visible errors as well.
@@ -23,11 +29,12 @@ const getText = (path) => {
 const start = async () => {
     try {
         const first = await getText('./7-eventLoop/content/first.txt');
-        const second = await getText('./5-fs-module/content/subfolder/education.txt');
-        console.log(first, second);
-    } catch (err) {
+        const second = await getText('./7-eventLoop/content/second.txt');
+        console.log(first);
+        console.log(second);
+    }catch(err){
         console.log(err);
     }
 }
 
-start()
+start();
