@@ -4,6 +4,8 @@
 
 const { readFile } = require('fs');
 
+// I was today years old when i knew that we cannot write (resolve, reject)
+// It is apparantly wrong. We must write (reject, resolve)
 const getText = (path) => {
     return new Promise((reject, resolve) => {
         readFile(path, 'utf-8', (err, data) => {
@@ -32,7 +34,7 @@ const start = async () => {
         const second = await getText('./7-eventLoop/content/second.txt');
         console.log(first);
         console.log(second);
-    }catch(err){
+    } catch (err) {
         console.log(err);
     }
 }

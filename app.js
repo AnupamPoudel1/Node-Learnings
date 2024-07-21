@@ -1,7 +1,7 @@
 const { readFile } = require('fs');
 
 const getText = (path) => {
-    return new Promise((reject, resolve) => {
+    return new Promise((resolve, reject) => {
         readFile(path, 'utf-8', (err, data) => {
             if (err) {
                 reject(err);
@@ -23,8 +23,9 @@ const getText = (path) => {
 const start = async () => {
     try {
         const first = await getText('./7-eventLoop/content/first.txt');
-        const second = await getText('./5-fs-module/content/subfolder/education.txt');
-        console.log(first, second);
+        const second = await getText('./7-eventLoop/content/second.txt');
+        console.log(first);
+        console.log(second);
     } catch (err) {
         console.log(err);
     }
