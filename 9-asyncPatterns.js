@@ -24,10 +24,6 @@ getText('./7-eventLoop/content/first.txt')
 
 // using async await
 // There is better way to do this that we will explore later
-
-// I dont know why but here the first is getting print but the second is not getting printed.
-// There are no visible errors as well.
-// But the main point of the code is how can we use async and await to resolve promises.
 const start = async () => {
     try {
         const first = await getText('./7-eventLoop/content/first.txt');
