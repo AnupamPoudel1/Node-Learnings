@@ -1,0 +1,7 @@
+Events:
+Every action on a computer is an event. 
+For example clicking a link, making a connection or opening a file.
+All these actions are calle as events.
+Node.js is perfect for event-driven application.
+Node.js provides a built-in module for events by name 'events'.
+we can do require('events') to use the events module.
