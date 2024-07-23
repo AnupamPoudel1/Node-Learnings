@@ -16,12 +16,12 @@ customEmitter.on('response', () => {
 
 // We can have as many functions as we want in on method of EventEmitter
 // For example the function below also functions as well as the one above even tho they have same event
-customEmitter.on('response', () => {
-    console.log(`Another Logic Implemented`);
+customEmitter.on('response', (name, id) => {
+    console.log(`Name: ${name}`);
 })
 
-customEmitter.on('response', () => {
-    console.log(`Third Logic Implemented`);
+customEmitter.on('response', (name, id) => {
+    console.log(`Age: ${id}`);
 })
 // We will get all three console.log as output while emitting the event 'response'
 
@@ -29,3 +29,8 @@ customEmitter.on('response', () => {
 // The event in emit method should be same as the one on the on method
 // In this case the event is 'response' 
 customEmitter.emit('response');
+
+// We can also pass parameters in the emit method.
+// But the on method should also recieve those parameters
+// Example given below
+customEmitter.emit('response', 'Anupam', 23);
