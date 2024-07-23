@@ -14,6 +14,13 @@ customEmitter.on('response', () => {
     console.log(`Data Received`);
 })
 
+// We can have as many functions as we want in on method of EventEmitter
+// For example the function below also functions as well as the one above even tho they have same event
+customEmitter.on('response', () => {
+    console.log(`Another Logic Implemented`);
+})
+// We will get both console.log as output while emitting the event 'response'
+
 // Then we use emit to emit an event
 // The event in emit method should be same as the one on the on method
 // In this case the event is 'response' 
