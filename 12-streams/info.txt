@@ -1,0 +1,14 @@
+Stream:
+A stream is an abstract interface for working with streaming data in node.js.
+The stream module provides an API for implementing stream interface.
+Streams can be readable, writable or both. All streams are instance of EventEmitter.
+
+To access stream in node.js
+    const stream = require('stream');
+
+
+Types of Stream:
+    writable: streams to which data can be written. (example: fs.createWriteStream())
+    readable: stream from which data can be read. (example: fs.createReadStream())
+    duplex: stream that are both readable and writable. (example: net.Socket)
+    transform: duplex stream that can transform or modify data as it is written and read (example: zlib.createDeflate())
